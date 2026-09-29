@@ -1,0 +1,31 @@
+[project]
+name = "invoice-tracker"
+version = "0.1.0"
+description = "A freelancer invoice tracker. Users sign up, add clients, create invoices with line items, mark them paid, and eventually pay for a Pro plan."
+readme = "README.md"
+authors = [
+    { name = "Tudor Ciprian", email = "raulciprian.tudor@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+]
+
+[project.scripts]
+invoice-tracker = "invoice_tracker:main"
+
+[build-system]
+requires = ["uv_build>=0.12.20,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
