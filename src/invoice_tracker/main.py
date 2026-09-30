@@ -1,10 +1,9 @@
 from fastapi import FastAPI
 
-from .clients import router
+from .clients.router import router as clients_router
 
 app = FastAPI()
-
-app.include_router(router.client)
+app.include_router(clients_router)
 
 
 @app.get("/health", tags=["Server Status"])
